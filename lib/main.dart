@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Teste de aplicação',
+      title: 'Entregas em Sobral',
       home: MyHomePage(),
     );
   }
