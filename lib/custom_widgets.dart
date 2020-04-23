@@ -53,6 +53,14 @@ class DrawerHeader extends StatelessWidget {
       flex: 2,
       child: Container(
         decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.lightBlueAccent,
+              Colors.blue,
+            ],
+          ),
           color: Colors.lightGreen.shade100,
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(50.0),
@@ -69,7 +77,7 @@ class DrawerHeader extends StatelessWidget {
                 textStyle: TextStyle(
                   fontSize: 30.0,
                   fontWeight: FontWeight.normal,
-                  color: Colors.black54,
+                  color: Colors.white,
                 ),
               ),
             children: <TextSpan>[
@@ -174,7 +182,15 @@ class DrawerBottomInfo extends StatelessWidget {
       flex: 2,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.red.shade100,
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.lightBlueAccent,
+              Colors.blue,
+            ],
+          ),
+          //color: Colors.blue.shade100,
           borderRadius: BorderRadius.only(
             //topLeft: Radius.circular(20.0),
             topRight: Radius.circular(150.0),
@@ -298,5 +314,191 @@ class DrawerBottomInfo extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class TelaPrincipalBanner extends StatelessWidget {
+
+  final String mensagem;
+
+  TelaPrincipalBanner({@required this.mensagem});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Colors.lightBlueAccent,
+            Colors.blue,
+          ],
+        ),
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(10.0),
+          topLeft: Radius.circular(10.0),
+          bottomRight: Radius.circular(10.0),
+          bottomLeft: Radius.circular(10.0),
+        ),
+        color: Colors.blue,
+      ),
+      width: double.infinity,
+      height: 120.0,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Text(
+            mensagem,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.quicksand(
+              textStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TelaPrincipalCategorias extends StatelessWidget {
+
+  final String nomeDaCategoria;
+
+  TelaPrincipalCategorias({@required this.nomeDaCategoria});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.bottomLeft,
+      width: double.infinity,
+      height: 40.0,
+      child: Text(
+        nomeDaCategoria,
+        style: GoogleFonts.michroma(
+          textStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 12.0,
+            color: Colors.black54,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CardEmpresa extends StatelessWidget {
+
+  final String nomeDaEmpresa;
+  final String descricao;
+  final String imagem;
+  final String instagram;
+
+  CardEmpresa({@required this.nomeDaEmpresa, @required this.descricao, @required this.instagram, @required this.imagem});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        _launchInBrowser('http://www.instagram.com/$instagram');
+      },
+      child: Card(
+        child: Container(
+          padding: EdgeInsets.all(16.0),
+          width: 150.0,
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                CircleAvatar(
+                  radius: 40.0,
+                  backgroundImage: AssetImage('assets/images/$imagem'),
+                ),
+                Container(
+                  height: 10.0,
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    child: Text(
+                      nomeDaEmpresa.toUpperCase(),
+                      style: GoogleFonts.quicksand(
+                        textStyle: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Container(
+                    child: Text(
+                      descricao,
+                      style: GoogleFonts.quicksand(
+                        textStyle: TextStyle(
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        child: Text(
+                          '@',
+                          style: GoogleFonts.quicksand(
+                            textStyle: TextStyle(
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black54,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          instagram,
+                          style: GoogleFonts.quicksand(
+                            textStyle: TextStyle(
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black54,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> _launchInBrowser(String url) async {
+  if (await canLaunch(url)) {
+    await launch(
+      url,
+      forceSafariVC: false,
+      forceWebView: false,
+      headers: <String, String>{'my_header_key': 'my_header_value'},
+    );
+  } else {
+    throw 'Could not launch $url';
   }
 }

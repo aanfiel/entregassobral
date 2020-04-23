@@ -18,10 +18,161 @@ class MyHomePage extends StatelessWidget {
         drawerTitle: 'Entregas em Sobral',
         drawerSubtitle: 'Guia de comércios e serviços em domicílio',
       ),
-      body: Container(
-        child: Center(
-          child: Text(
-            'Texto'
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              children: <Widget>[
+                TelaPrincipalBanner(
+                    mensagem: 'Conheça todos os comércios fazendo entregas na cidade de Sobral durante a quarentena.',
+                ),
+                TelaPrincipalCategorias(
+                  nomeDaCategoria: 'Colecionáveis:',
+                ),
+                Divider(),
+                SizedBox(
+                  height: 200.0,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                    ],
+                  ),
+                ),
+                TelaPrincipalCategorias(
+                  nomeDaCategoria: 'Colecionáveis:',
+                ),
+                Divider(),
+                SizedBox(
+                  height: 200.0,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                    ],
+                  ),
+                ),
+                TelaPrincipalCategorias(
+                  nomeDaCategoria: 'Colecionáveis:',
+                ),
+                Divider(),
+                SizedBox(
+                  height: 200.0,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                    ],
+                  ),
+                ),
+                TelaPrincipalCategorias(
+                  nomeDaCategoria: 'Colecionáveis:',
+                ),
+                Divider(),
+                SizedBox(
+                  height: 200.0,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                      CardEmpresa(
+                        nomeDaEmpresa: 'JOV & GEEK',
+                        descricao: 'Artigos para colecionadores',
+                        imagem: 'jovgeek.png',
+                        instagram: 'jovgeek',
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
