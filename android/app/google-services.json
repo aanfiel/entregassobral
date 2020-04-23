@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "170720171469",
+    "firebase_url": "https://entregas-sobral.firebaseio.com",
+    "project_id": "entregas-sobral",
+    "storage_bucket": "entregas-sobral.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170720171469:android:34a802f37b7738eb576084",
+        "android_client_info": {
+          "package_name": "br.com.quadro.comerciosemsobral"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170720171469-fnmq45i9e932n432armb7ci3k91vca98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFJo81wS_RiHLwVuIpzsck2F4mNGBU1xU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170720171469-fnmq45i9e932n432armb7ci3k91vca98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,4 @@
+import 'package:comerciosemsobral/categorias.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'custom_widgets.dart';
@@ -18,13 +19,7 @@ class MyHomePage extends StatelessWidget {
         drawerTitle: 'Entregas em Sobral',
         drawerSubtitle: 'Guia de comércios e serviços em domicílio',
       ),
-      body: Container(
-        child: Center(
-          child: Text(
-            'Texto'
-          ),
-        ),
-      ),
+      body: CategoriasTab()
     );
   }
 }
